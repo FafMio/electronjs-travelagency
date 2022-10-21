@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+
+    <title>Ajouter une annonce - Clermont Travel</title>
+
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="my-5 text-center">Ajout d'une nouvelle annonce</h1>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12 mx-auto card py-3">
+            <div id="response-message" class="alert-success py-3" hidden></div>
+
+            <form id="new-item-form">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <div class="form-group">
+                            <label for="item-title">Titre</label>
+                            <input type="text" class="form-control" id="item-title" required>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="form-group">
+                            <label for="item-image">URL de l'image</label>
+                            <input type="text" class="form-control" id="item-image" required>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="form-group">
+                            <label for="item-features">Accroche</label>
+                            <input type="text" class="form-control" id="item-features" required>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="form-group">
+                            <label for="item-description">Description</label>
+                            <textarea class="form-control" name="item-description" id="item-description" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="form-group">
+                            <label for="item-price">Prix</label>
+                            <input type="number" class="form-control" id="item-price" required>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="form-group">
+                            <label for="item-stars">Étoiles</label>
+                            <input type="number" class="form-control" id="item-stars" step=".5" max="5" min="0" required>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="form-group">
+                            <label for="item-place">Lieu</label>
+                            <input type="text" class="form-control" id="item-place" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group" id="form-bests">
+                            <label class="me-1" for="item-the-bests">Vous aimerez aussi</label>
+                            <div class="input-group mb-3">
+                                <input type="text" id="item-the-bests" class="form-control" placeholder="Contenu">
+                                <button class="btn btn-success ms-1 col-4" id="add-bests" type="button">Ajouter</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <ul id="list-bests">
+
+                        </ul>
+                    </div>
+
+                    <div class="col-6 mx-auto">
+                        <button type="submit" id="new-item-submit" class="btn btn-success btn-block">Ajouter</button>
+                        <button type="reset" class="btn btn-danger btn-block">Vider</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script src="../../src/Controllers/announce/add-announce-controller.js"></script>
+</html>

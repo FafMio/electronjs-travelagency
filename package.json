@@ -1,0 +1,29 @@
+{
+  "name": "tp-maison-sylvainroux",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "electron-builder --win"
+  },
+  "build": {
+    "appId": "electron.clermontravel",
+    "buildVersion": "v0.1-dev"
+  },
+  "keywords": [],
+  "author": {
+    "name": "FafMio",
+    "email": ""
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.2.0",
+    "bootstrap": "^5.2.2"
+  },
+  "devDependencies": {
+    "electron": "^21.1.1",
+    "electron-builder": "^23.6.0"
+  }
+}
