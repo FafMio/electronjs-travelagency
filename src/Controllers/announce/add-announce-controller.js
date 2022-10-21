@@ -1,7 +1,6 @@
 const msgDiv = document.querySelector('#response-message')
 
 const formElement = document.querySelector('#new-item-form')
-const btnSubmit = formElement.querySelector('#new-item-submit')
 const btnReset = formElement.querySelector('button[type="reset"]')
 
 const formElements = document.querySelector('#new-item-form').elements;
@@ -14,7 +13,18 @@ const bestSubmit = bestsForm.querySelector('button')
 bestSubmit.addEventListener('click', (e) => {
     if (bestField.value !== "" || bestField.value.length > 0) {
         let newBest = document.createElement('li')
-        newBest.innerText = bestField.value;
+
+        let iconDelete = document.createElement("i")
+            iconDelete.classList.add("fas")
+            iconDelete.classList.add("fa-times")
+            iconDelete.classList.add("text-danger")
+            iconDelete.style.cursor = "pointer"
+            iconDelete.addEventListener('click', (e) => {
+                newBest.remove()
+            })
+
+        newBest.innerText = bestField.value + " "
+        newBest.appendChild(iconDelete);
 
         bestField.value = "";
 

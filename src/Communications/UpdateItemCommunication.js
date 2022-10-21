@@ -9,22 +9,38 @@ class UpdateItemCommunication {
             const viewPath = path.join(__dirname, '..', '..', 'templates', 'announce', 'update-announce.html')
             const win = commonService.createWindow(viewPath, 1000, 500)
 
+            const inArrayToSearch = dataStore.announces
+            const index = inArrayToSearch.findIndex((item) => item.id === data.id)
 
-            win.webContents.on('did-finish-load', () => {
-                win.send('init-data', item)
-            })
+            if (index >= 0) {
+                const item = inArrayToSearch[index]
 
-            eHome.reply('item-updated', {
-                updatedItem,
-            })
+                win.webContents.on('did-finish-load', () => {
+                    win.send('init-data', item)
+                })
 
-            win.close()
+                this.onceUpdateItemCb = (e, updatedItem) => {
+                    updatedItem.id = item.id
+                    inArrayToSearch[index] = updatedItem
+                    dataStore.announces = inArrayToSearch
 
-            ipcMain.once('update-item', this.onceUpdateItemCb)
+                    mainWindow.send('item-updated', {
+                        updatedItem
+                    })
+
+                    win.close()
+                }
+
+                ipcMain.once('update-item', this.onceUpdateItemCb)
+            } else {
+                console.error('L\'item n\'existe pas')
+                win.close()
+            }
 
             win.on('closed', () => {
                 ipcMain.removeListener('update-item', this.onceUpdateItemCb)
             })
+
         })
     }
 }

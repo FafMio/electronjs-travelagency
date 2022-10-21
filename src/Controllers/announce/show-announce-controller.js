@@ -44,7 +44,8 @@ window.ipcRenderer.onceInitData((e, data) => {
         window.close()
     })
     document.querySelector('button#edit').addEventListener('click', () => {
-        window.ipcRenderer.sendUpdatedItem({id: announce.id})
+        window.ipcRenderer.sendOpenEditItemWindow({id: announce.id})
+        window.close()
     })
     document.querySelector('button#delete').addEventListener('click', () => {
         let args = {id: announce.id}

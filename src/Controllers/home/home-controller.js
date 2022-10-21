@@ -74,3 +74,7 @@ window.ipcRenderer.onNewItemAdded((e, data) => {
 window.ipcRenderer.onDeleteItem((e, data) => {
     location.reload()
 })
+window.ipcRenderer.onItemUpdated((e, data) => {
+    console.log(data)
+    location.reload()
+})
