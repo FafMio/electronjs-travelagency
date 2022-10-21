@@ -7,7 +7,7 @@ class ShowItemCommunication {
     init() {
         ipcMain.on('open-show-item-window', (eHome, data) => {
             const viewPath = path.join(__dirname, '..', '..', 'templates', 'announce', 'show-announce.html')
-            const win = commonService.createWindow(viewPath, 700, 700)
+            const win = commonService.createWindow(viewPath, 600, 960)
 
             let announce =  dataStore.announces.filter(field => {
                 return (field.id === data.id)

@@ -45,6 +45,21 @@ class DataStore {
                 stars: 40,
                 place: 'Canaries - Tenerife (Candelaria)'
             },
+            {
+                id: 3,
+                title: 'Hôtel Drago Park - Canaries - Fuerteventura',
+                image_url: 'https://photos.thalassoto.com/DRAGO-PARK-01.jpg',
+                features: 'Tout inclus • Vol inclus',
+                description: 'Costa Calma se situe au sud-est de Fuerteventura, connue pour ses nombreuses plages paradisiaques de sable blanc et fin, bordées par une mer claire et peu profonde. Protégée du vent, ses eaux sont calmes, elle est parfaite pour se baigner tranquillement et profiter du soleil. C\'est dans ce cadre que la Drago Park vous accueille pour vous permettre de passer des vacances de rêve en famille en profitant de chaque instant grâce à ses installations de qualités et sa formule « tout compris ».',
+                the_bests: [
+                    {content: 'Infrastructures et services de bon standing'},
+                    {content: 'La belle piscine'},
+                    {content: 'Chambres confortables et spacieuses'},
+                ],
+                price: 296,
+                stars: 3.5,
+                place: 'Canaries - Fuerteventura - Espagne'
+            },
         ]
     }
 }

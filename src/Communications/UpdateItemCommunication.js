@@ -7,7 +7,7 @@ class UpdateItemCommunication {
     init(mainWindow) {
         ipcMain.on('open-edit-item-window', (eHome, data) => {
             const viewPath = path.join(__dirname, '..', '..', 'templates', 'announce', 'update-announce.html')
-            const win = commonService.createWindow(viewPath, 1000, 500)
+            const win = commonService.createWindow(viewPath, 1280, 720)
 
             const inArrayToSearch = dataStore.announces
             const index = inArrayToSearch.findIndex((item) => item.id === data.id)

@@ -10,8 +10,8 @@ function generateRowTable(row) {
 
     newChild.innerHTML = `
         <div class="card-header">
-            <div class="d-flex flex-row justify-content-between align-items-center">
-                <h2 class="text-dark fs-4" style="cursor: pointer" id="${row.id}" data-click="">${row.title}</h2>
+            <div class="d-flex flex-row justify-content-between align-items-center my-1">
+                <h2 class="text-dark fs-4 mt-2" style="cursor: pointer" id="${row.id}" data-click="">${row.title}</h2>
                 <img src="https://static.hephe.net/images/note/${row.stars.toString().replace('.', '')}.png" alt="stars-of-${row.id}">
                 <span class="fs-5" id="address">${row.place}</span>
             </div>
