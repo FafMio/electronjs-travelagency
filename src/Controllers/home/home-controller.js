@@ -16,16 +16,13 @@ function generateRowTable(row) {
         </div>
         <div class="card-body p-0">
             <div class="d-flex flex-row">
-                <div class="col-4 pe-2">
-                    <img src="${row.image_url}" alt="card image" class="img-fluid">
-                </div>
+                <div class="col-4 pe-2"><img src="${row.image_url}" alt="card image" class="img-fluid"></div>
                 <div class="col-8">
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="col-10">
                             <span class="text-muted">${row.features}</span>
                             <p class="mt-2 fw-bold">Vous aimerez aussi :</p>
-                            <ul class="list-style-none" id="bests-list">
-                            </ul>
+                            <ul class="list-style-none" id="bests-list"></ul>
                             <p>${row.description.toString().substr(0, 100)}...</p>
                         </div>
                         <div class="col-2">
@@ -34,8 +31,7 @@ function generateRowTable(row) {
                     </div>
                 </div>
             </div>
-        </div>
-    `;
+        </div>`;
 
     const bests = newChild.querySelector('#bests-list')
     if (row.the_bests.length > 0)
@@ -72,6 +68,7 @@ window.ipcRenderer.onNewItemAdded((e, data) => {
 window.ipcRenderer.onDeleteItem((e, data) => {
     location.reload()
 })
+
 window.ipcRenderer.onItemUpdated((e, data) => {
     console.log(data)
     location.reload()

@@ -9,7 +9,6 @@ window.ipcRenderer.onceInitData((e, data) => {
         <div class="col-10 mx-auto">
             <div class="card shadow mx-auto my-5">
                 <img src="${announce.image_url}" class="card-img-top">
-        
                 <div class="card-body">
                     <h2 class="card-title text-center">Voyage vers ${announce.title}</h2>
                     <span class="text-muted ">${announce.features}</span>
@@ -18,7 +17,6 @@ window.ipcRenderer.onceInitData((e, data) => {
                     <ul class="list-style-none" id="bests-list">
                     </ul>
                 </div>
-                
                 <div class="card-footer">
                     <div class="d-flex justify-content-center">
                         <button class="btn btn-warning mx-1" id="edit">Modifier</button>
@@ -28,9 +26,7 @@ window.ipcRenderer.onceInitData((e, data) => {
                 </div>
             </div>
         </div>
-    </div>
-    `
-
+    </div>`
 
     const bests = offer.querySelector('#bests-list')
     if (announce.the_bests.length > 0)

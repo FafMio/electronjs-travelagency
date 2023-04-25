@@ -56,13 +56,6 @@ formElement.addEventListener('submit', (e) => {
     })
 
     window.ipcRenderer.invokeNewItem(newItem, (msg) => {
-        msgDiv.innerText = msg
-        msgDiv.hidden = false
-
-        setTimeout(() => {
-            msgDiv.hidden = true
-        }, 1500)
-
         e.target.reset()
     })
 
