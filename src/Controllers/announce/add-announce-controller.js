@@ -52,7 +52,7 @@ formElement.addEventListener('submit', (e) => {
     }
 
     Array.from(bestsElements.children).forEach((child) => {
-        newItem.the_bests.push({content: child.innerHTML})
+        newItem.the_bests.push({content: child.textContent})
     })
 
     window.ipcRenderer.invokeNewItem(newItem, (msg) => {
@@ -65,4 +65,6 @@ formElement.addEventListener('submit', (e) => {
 
         e.target.reset()
     })
+
+    window.close()
 })

@@ -82,4 +82,5 @@ formElement.addEventListener('submit', (e) => {
     })
 
     window.ipcRenderer.sendUpdatedItem(updatedItem)
+    window.close()
 })
